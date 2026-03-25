@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "MAX 10"
 set_global_assignment -name DEVICE 10M50DCF484C7G
-set_global_assignment -name TOP_LEVEL_ENTITY EECS3216FinalProject
+set_global_assignment -name TOP_LEVEL_ENTITY top_module
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:51:27  MARCH 25, 2026"
 set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.1 Lite Edition"
@@ -59,3 +59,12 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
+set_global_assignment -name SDC_FILE project.sdc
+set_global_assignment -name VERILOG_FILE vga_renderer.v
+set_global_assignment -name VERILOG_FILE vga_controller.v
+set_global_assignment -name VERILOG_FILE top_module.v
+set_global_assignment -name VERILOG_FILE seg7_display.v
+set_global_assignment -name VERILOG_FILE ball_controller.v
+set_global_assignment -name VERILOG_FILE accelerometer_spi.v
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
