@@ -1,0 +1,18 @@
+Fitter Status : Successful - Tue Mar 31 14:16:45 2026
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : EECS3216FinalProject
+Top-level Entity Name : top_module
+Family : MAX 10
+Device : 10M50DCF484C7G
+Timing Models : Final
+Total logic elements : 2,439 / 49,760 ( 5 % )
+    Total combinational functions : 2,414 / 49,760 ( 5 % )
+    Dedicated logic registers : 201 / 49,760 ( < 1 % )
+Total registers : 201
+Total pins : 63 / 360 ( 18 % )
+Total virtual pins : 0
+Total memory bits : 0 / 1,677,312 ( 0 % )
+Embedded Multiplier 9-bit elements : 4 / 288 ( 1 % )
+Total PLLs : 1 / 4 ( 25 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0
