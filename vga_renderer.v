@@ -21,6 +21,7 @@ module vga_renderer (
     input      [9:0]  safe_x,
     input      [9:0]  safe_w,
     input             game_over,
+    input             splash_active,
 
     // VGA colour outputs (4-bit per channel for DE10-Lite)
     output reg [3:0]  vga_r,
@@ -57,11 +58,42 @@ module vga_renderer (
     wire safe_left_line  = (col == safe_x)              && (row >= 200) && (row < plat_y);
     wire safe_right_line = (col == safe_x + safe_w - 1) && (row >= 200) && (row < plat_y);
 
+    // Splash UI: border + "button" rectangle in centre.
+    wire splash_border = (((col >= 80) && (col <= 560)) &&
+                          ((row == 120) || (row == 360))) ||
+                         (((row >= 120) && (row <= 360)) &&
+                          ((col == 80) || (col == 560)));
+    wire splash_button = (col >= 250) && (col < 390) && (row >= 220) && (row < 260);
+    wire splash_button_inner = (col >= 258) && (col < 382) && (row >= 228) && (row < 252);
+
     always @(posedge pixel_clk) begin
         if (!disp_ena) begin
             vga_r <= 4'h0;
             vga_g <= 4'h0;
             vga_b <= 4'h0;
+        end else if (splash_active) begin
+            // Blue splash screen shown until KEY[1] is pressed.
+            vga_r <= 4'h0;
+            vga_g <= 4'h1;
+            vga_b <= 4'h5;
+
+            if (splash_border) begin
+                vga_r <= 4'hA;
+                vga_g <= 4'hA;
+                vga_b <= 4'hF;
+            end
+
+            if (splash_button) begin
+                vga_r <= 4'hF;
+                vga_g <= 4'hB;
+                vga_b <= 4'h0;
+            end
+
+            if (splash_button_inner) begin
+                vga_r <= 4'hF;
+                vga_g <= 4'hF;
+                vga_b <= 4'h0;
+            end
         end else if (game_over) begin
             // Pulsing red screen for game over
             vga_r <= 4'hF;

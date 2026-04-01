@@ -232,6 +232,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "KEY[1]",
+					"strict" : false
+				},
+				{
 					"name" : "GSENSOR_INT",
 					"strict" : false
 				}
