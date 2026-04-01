@@ -1,3 +1,18 @@
+## Whole Project FSM
+
+ - States
+   - Splash screen
+   - Playing
+   - Game over
+ - Transitions
+   - Splash to playing when start button is pressed
+   - Playing to playing if the ball isn't out: output the speed of the ball
+   - Playing to game over if the ball is out
+   - Any to splash if reset button is pressed
+
+
+
+
 # Digital Design Analysis — EECS 3216 Ball-Balancing Game
 
 This document summarizes the FPGA architecture, **digital building blocks** used across the RTL, and **how the source files interact**. The design targets the **Intel MAX10** on the **DE10-Lite** board with **VGA** video and an **ADXL345** accelerometer over **3-wire SPI**.
