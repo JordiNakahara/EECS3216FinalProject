@@ -64,10 +64,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "GSENSOR_SDI",
-					"strict" : false
-				},
-				{
 					"name" : "GSENSOR_CS_N",
 					"strict" : false
 				},
@@ -224,6 +220,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "GSENSOR_SDIO",
+					"strict" : false
+				},
+				{
 					"name" : "KEY[0]",
 					"strict" : false
 				},
@@ -232,7 +232,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "GSENSOR_SDO",
+					"name" : "GSENSOR_INT",
 					"strict" : false
 				}
 			]

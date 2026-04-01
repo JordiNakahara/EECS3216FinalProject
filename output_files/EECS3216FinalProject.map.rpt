@@ -1,5 +1,5 @@
 Analysis & Synthesis report for EECS3216FinalProject
-Wed Apr 01 15:03:33 2026
+Wed Apr 01 11:37:40 2026
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -15,28 +15,29 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis DSP Block Usage Summary
   9. Analysis & Synthesis IP Cores Summary
- 10. State Machine - |top_module|accelerometer_spi:accel_inst|state
- 11. Registers Removed During Synthesis
- 12. Removed Registers Triggering Further Register Optimizations
- 13. General Register Statistics
- 14. Inverted Register Statistics
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Parameter Settings for User Entity Instance: pll:pll_inst|altpll:altpll_component
- 17. Parameter Settings for User Entity Instance: vga_controller:vga_ctrl
- 18. Parameter Settings for Inferred Entity Instance: seg7_display:score_disp|lpm_divide:Mod0
- 19. Parameter Settings for Inferred Entity Instance: seg7_display:score_disp|lpm_divide:Div0
- 20. Parameter Settings for Inferred Entity Instance: seg7_display:score_disp|lpm_divide:Mod1
- 21. Parameter Settings for Inferred Entity Instance: seg7_display:score_disp|lpm_divide:Div1
- 22. Parameter Settings for Inferred Entity Instance: seg7_display:score_disp|lpm_divide:Mod2
- 23. Parameter Settings for Inferred Entity Instance: seg7_display:score_disp|lpm_divide:Div2
- 24. Parameter Settings for Inferred Entity Instance: seg7_display:score_disp|lpm_divide:Mod3
- 25. Parameter Settings for Inferred Entity Instance: vga_renderer:renderer|lpm_mult:Mult0
- 26. Parameter Settings for Inferred Entity Instance: vga_renderer:renderer|lpm_mult:Mult1
- 27. altpll Parameter Settings by Entity Instance
- 28. lpm_mult Parameter Settings by Entity Instance
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: pll:pll_inst|altpll:altpll_component
+ 15. Parameter Settings for User Entity Instance: vga_controller:vga_ctrl
+ 16. Parameter Settings for Inferred Entity Instance: seg7_display:score_disp|lpm_divide:Mod0
+ 17. Parameter Settings for Inferred Entity Instance: seg7_display:score_disp|lpm_divide:Div0
+ 18. Parameter Settings for Inferred Entity Instance: seg7_display:score_disp|lpm_divide:Mod1
+ 19. Parameter Settings for Inferred Entity Instance: seg7_display:score_disp|lpm_divide:Div1
+ 20. Parameter Settings for Inferred Entity Instance: seg7_display:score_disp|lpm_divide:Mod2
+ 21. Parameter Settings for Inferred Entity Instance: seg7_display:score_disp|lpm_divide:Div2
+ 22. Parameter Settings for Inferred Entity Instance: seg7_display:score_disp|lpm_divide:Mod3
+ 23. Parameter Settings for Inferred Entity Instance: vga_renderer:renderer|lpm_mult:Mult0
+ 24. Parameter Settings for Inferred Entity Instance: vga_renderer:renderer|lpm_mult:Mult1
+ 25. altpll Parameter Settings by Entity Instance
+ 26. lpm_mult Parameter Settings by Entity Instance
+ 27. Port Connectivity Checks: "adxl345_interface:accel_inst|spi_controller:spic"
+ 28. Port Connectivity Checks: "adxl345_interface:accel_inst"
  29. Post-Synthesis Netlist Statistics for Top Partition
  30. Elapsed Time Per Partition
  31. Analysis & Synthesis Messages
+ 32. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -63,15 +64,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Apr 01 15:03:33 2026       ;
+; Analysis & Synthesis Status        ; Successful - Wed Apr 01 11:37:40 2026       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; EECS3216FinalProject                        ;
 ; Top-level Entity Name              ; top_module                                  ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 2,442                                       ;
-;     Total combinational functions  ; 2,412                                       ;
-;     Dedicated logic registers      ; 201                                         ;
-; Total registers                    ; 201                                         ;
+; Total logic elements               ; 2,444                                       ;
+;     Total combinational functions  ; 2,432                                       ;
+;     Dedicated logic registers      ; 194                                         ;
+; Total registers                    ; 194                                         ;
 ; Total pins                         ; 63                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -87,7 +88,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+----------------------+
 ; Option                                                           ; Setting            ; Default Value        ;
 +------------------------------------------------------------------+--------------------+----------------------+
-; Device                                                           ; 10M50DCF484C7G     ;                      ;
+; Device                                                           ; 10M50DAF484C7G     ;                      ;
 ; Top-level entity name                                            ; top_module         ; EECS3216FinalProject ;
 ; Family name                                                      ; MAX 10             ; Cyclone V            ;
 ; Use smart compilation                                            ; Off                ; Off                  ;
@@ -202,7 +203,7 @@ https://fpgasoftware.intel.com/eula.
 ; top_module.v                     ; yes             ; User Verilog HDL File        ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v               ;         ;
 ; seg7_display.v                   ; yes             ; User Verilog HDL File        ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v             ;         ;
 ; ball_controller.v                ; yes             ; User Verilog HDL File        ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/ball_controller.v          ;         ;
-; accelerometer_spi.v              ; yes             ; User Verilog HDL File        ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/accelerometer_spi.v        ;         ;
+; adxl345_interface.sv             ; yes             ; User SystemVerilog HDL File  ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/adxl345_interface.sv       ;         ;
 ; ip/pll.v                         ; yes             ; User Wizard-Generated File   ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/ip/pll.v                   ;         ;
 ; altpll.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf                  ;         ;
 ; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc              ;         ;
@@ -235,39 +236,39 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 2,442        ;
-;                                             ;              ;
-; Total combinational functions               ; 2412         ;
-; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 513          ;
-;     -- 3 input functions                    ; 656          ;
-;     -- <=2 input functions                  ; 1243         ;
-;                                             ;              ;
-; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 1661         ;
-;     -- arithmetic mode                      ; 751          ;
-;                                             ;              ;
-; Total registers                             ; 201          ;
-;     -- Dedicated logic registers            ; 201          ;
-;     -- I/O registers                        ; 0            ;
-;                                             ;              ;
-; I/O pins                                    ; 63           ;
-;                                             ;              ;
-; Embedded Multiplier 9-bit elements          ; 4            ;
-;                                             ;              ;
-; Total PLLs                                  ; 1            ;
-;     -- PLLs                                 ; 1            ;
-;                                             ;              ;
-; Maximum fan-out node                        ; KEY[0]~input ;
-; Maximum fan-out                             ; 173          ;
-; Total fan-out                               ; 7090         ;
-; Average fan-out                             ; 2.58         ;
-+---------------------------------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                   ;
++---------------------------------------------+---------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                           ;
++---------------------------------------------+---------------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 2,444                                                                           ;
+;                                             ;                                                                                 ;
+; Total combinational functions               ; 2432                                                                            ;
+; Logic element usage by number of LUT inputs ;                                                                                 ;
+;     -- 4 input functions                    ; 547                                                                             ;
+;     -- 3 input functions                    ; 671                                                                             ;
+;     -- <=2 input functions                  ; 1214                                                                            ;
+;                                             ;                                                                                 ;
+; Logic elements by mode                      ;                                                                                 ;
+;     -- normal mode                          ; 1700                                                                            ;
+;     -- arithmetic mode                      ; 732                                                                             ;
+;                                             ;                                                                                 ;
+; Total registers                             ; 194                                                                             ;
+;     -- Dedicated logic registers            ; 194                                                                             ;
+;     -- I/O registers                        ; 0                                                                               ;
+;                                             ;                                                                                 ;
+; I/O pins                                    ; 63                                                                              ;
+;                                             ;                                                                                 ;
+; Embedded Multiplier 9-bit elements          ; 4                                                                               ;
+;                                             ;                                                                                 ;
+; Total PLLs                                  ; 1                                                                               ;
+;     -- PLLs                                 ; 1                                                                               ;
+;                                             ;                                                                                 ;
+; Maximum fan-out node                        ; pll:pll_inst|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] ;
+; Maximum fan-out                             ; 129                                                                             ;
+; Total fan-out                               ; 7115                                                                            ;
+; Average fan-out                             ; 2.58                                                                            ;
++---------------------------------------------+---------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -275,8 +276,11 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                 ; Entity Name         ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |top_module                               ; 2412 (0)            ; 201 (0)                   ; 0           ; 0          ; 4            ; 0       ; 2         ; 63   ; 0            ; 0          ; |top_module                                                                                                                         ; top_module          ; work         ;
-;    |accelerometer_spi:accel_inst|         ; 84 (84)             ; 73 (73)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_module|accelerometer_spi:accel_inst                                                                                            ; accelerometer_spi   ; work         ;
+; |top_module                               ; 2432 (0)            ; 194 (0)                   ; 0           ; 0          ; 4            ; 0       ; 2         ; 63   ; 0            ; 0          ; |top_module                                                                                                                         ; top_module          ; work         ;
+;    |adxl345_interface:accel_inst|         ; 104 (39)            ; 66 (31)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_module|adxl345_interface:accel_inst                                                                                            ; adxl345_interface   ; work         ;
+;       |config_rom:cr|                     ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_module|adxl345_interface:accel_inst|config_rom:cr                                                                              ; config_rom          ; work         ;
+;       |spi_controller:spic|               ; 60 (49)             ; 35 (26)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_module|adxl345_interface:accel_inst|spi_controller:spic                                                                        ; spi_controller      ; work         ;
+;          |spi_clock_generator:spicg|      ; 11 (11)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_module|adxl345_interface:accel_inst|spi_controller:spic|spi_clock_generator:spicg                                              ; spi_clock_generator ; work         ;
 ;    |ball_controller:ball_ctrl|            ; 167 (167)           ; 73 (73)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_module|ball_controller:ball_ctrl                                                                                               ; ball_controller     ; work         ;
 ;    |pll:pll_inst|                         ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_module|pll:pll_inst                                                                                                            ; pll                 ; work         ;
 ;       |altpll:altpll_component|           ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_module|pll:pll_inst|altpll:altpll_component                                                                                    ; altpll              ; work         ;
@@ -347,65 +351,31 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +--------+--------------+---------+--------------+--------------+--------------------------+-----------------+
 
 
-Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------+
-; State Machine - |top_module|accelerometer_spi:accel_inst|state                       ;
-+---------------+------------+---------------+-------------+--------------+------------+
-; Name          ; state.DONE ; state.CS_HIGH ; state.SHIFT ; state.CS_LOW ; state.INIT ;
-+---------------+------------+---------------+-------------+--------------+------------+
-; state.INIT    ; 0          ; 0             ; 0           ; 0            ; 0          ;
-; state.CS_LOW  ; 0          ; 0             ; 0           ; 1            ; 1          ;
-; state.SHIFT   ; 0          ; 0             ; 1           ; 0            ; 1          ;
-; state.CS_HIGH ; 0          ; 1             ; 0           ; 0            ; 1          ;
-; state.DONE    ; 1          ; 0             ; 0           ; 0            ; 1          ;
-+---------------+------------+---------------+-------------+--------------+------------+
-
-
-+---------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                ;
-+-----------------------------------------------+---------------------------------------------------+
-; Register name                                 ; Reason for Removal                                ;
-+-----------------------------------------------+---------------------------------------------------+
-; ball_controller:ball_ctrl|ball_x[9]           ; Merged with ball_controller:ball_ctrl|ball_px[13] ;
-; ball_controller:ball_ctrl|ball_x[8]           ; Merged with ball_controller:ball_ctrl|ball_px[12] ;
-; ball_controller:ball_ctrl|ball_x[7]           ; Merged with ball_controller:ball_ctrl|ball_px[11] ;
-; ball_controller:ball_ctrl|ball_x[6]           ; Merged with ball_controller:ball_ctrl|ball_px[10] ;
-; ball_controller:ball_ctrl|ball_x[5]           ; Merged with ball_controller:ball_ctrl|ball_px[9]  ;
-; ball_controller:ball_ctrl|ball_x[4]           ; Merged with ball_controller:ball_ctrl|ball_px[8]  ;
-; ball_controller:ball_ctrl|ball_x[3]           ; Merged with ball_controller:ball_ctrl|ball_px[7]  ;
-; ball_controller:ball_ctrl|ball_x[2]           ; Merged with ball_controller:ball_ctrl|ball_px[6]  ;
-; ball_controller:ball_ctrl|ball_x[1]           ; Merged with ball_controller:ball_ctrl|ball_px[5]  ;
-; ball_controller:ball_ctrl|ball_x[0]           ; Merged with ball_controller:ball_ctrl|ball_px[4]  ;
-; vga_controller:vga_ctrl|column[11..31]        ; Merged with vga_controller:vga_ctrl|column[10]    ;
-; vga_controller:vga_ctrl|row[11..31]           ; Merged with vga_controller:vga_ctrl|row[10]       ;
-; vga_controller:vga_ctrl|row[10]               ; Stuck at GND due to stuck port data_in            ;
-; vga_controller:vga_ctrl|column[10]            ; Stuck at GND due to stuck port data_in            ;
-; accelerometer_spi:accel_inst|shift_out[0..10] ; Stuck at GND due to stuck port data_in            ;
-; ball_controller:ball_ctrl|ball_px[14,15]      ; Stuck at GND due to stuck port data_in            ;
-; ball_controller:ball_ctrl|ball_vx[14]         ; Merged with ball_controller:ball_ctrl|ball_vx[15] ;
-; accelerometer_spi:accel_inst|state~9          ; Lost fanout                                       ;
-; accelerometer_spi:accel_inst|state~10         ; Lost fanout                                       ;
-; accelerometer_spi:accel_inst|state~11         ; Lost fanout                                       ;
-; Total Number of Removed Registers = 71        ;                                                   ;
-+-----------------------------------------------+---------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                        ;
-+-------------------------------------------+---------------------------+--------------------------------------------+
-; Register name                             ; Reason for Removal        ; Registers Removed due to This Register     ;
-+-------------------------------------------+---------------------------+--------------------------------------------+
-; accelerometer_spi:accel_inst|shift_out[0] ; Stuck at GND              ; accelerometer_spi:accel_inst|shift_out[1], ;
-;                                           ; due to stuck port data_in ; accelerometer_spi:accel_inst|shift_out[2], ;
-;                                           ;                           ; accelerometer_spi:accel_inst|shift_out[3], ;
-;                                           ;                           ; accelerometer_spi:accel_inst|shift_out[4], ;
-;                                           ;                           ; accelerometer_spi:accel_inst|shift_out[5], ;
-;                                           ;                           ; accelerometer_spi:accel_inst|shift_out[6], ;
-;                                           ;                           ; accelerometer_spi:accel_inst|shift_out[7], ;
-;                                           ;                           ; accelerometer_spi:accel_inst|shift_out[8], ;
-;                                           ;                           ; accelerometer_spi:accel_inst|shift_out[9], ;
-;                                           ;                           ; accelerometer_spi:accel_inst|shift_out[10] ;
-+-------------------------------------------+---------------------------+--------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                            ;
++------------------------------------------------------------------+------------------------------------------------------------+
+; Register name                                                    ; Reason for Removal                                         ;
++------------------------------------------------------------------+------------------------------------------------------------+
+; ball_controller:ball_ctrl|ball_x[9]                              ; Merged with ball_controller:ball_ctrl|ball_px[13]          ;
+; ball_controller:ball_ctrl|ball_x[8]                              ; Merged with ball_controller:ball_ctrl|ball_px[12]          ;
+; ball_controller:ball_ctrl|ball_x[7]                              ; Merged with ball_controller:ball_ctrl|ball_px[11]          ;
+; ball_controller:ball_ctrl|ball_x[6]                              ; Merged with ball_controller:ball_ctrl|ball_px[10]          ;
+; ball_controller:ball_ctrl|ball_x[5]                              ; Merged with ball_controller:ball_ctrl|ball_px[9]           ;
+; ball_controller:ball_ctrl|ball_x[4]                              ; Merged with ball_controller:ball_ctrl|ball_px[8]           ;
+; ball_controller:ball_ctrl|ball_x[3]                              ; Merged with ball_controller:ball_ctrl|ball_px[7]           ;
+; ball_controller:ball_ctrl|ball_x[2]                              ; Merged with ball_controller:ball_ctrl|ball_px[6]           ;
+; ball_controller:ball_ctrl|ball_x[1]                              ; Merged with ball_controller:ball_ctrl|ball_px[5]           ;
+; ball_controller:ball_ctrl|ball_x[0]                              ; Merged with ball_controller:ball_ctrl|ball_px[4]           ;
+; vga_controller:vga_ctrl|column[11..31]                           ; Merged with vga_controller:vga_ctrl|column[10]             ;
+; vga_controller:vga_ctrl|row[11..31]                              ; Merged with vga_controller:vga_ctrl|row[10]                ;
+; adxl345_interface:accel_inst|spi_input_data[4,5]                 ; Merged with adxl345_interface:accel_inst|spi_input_data[1] ;
+; vga_controller:vga_ctrl|row[10]                                  ; Stuck at GND due to stuck port data_in                     ;
+; vga_controller:vga_ctrl|column[10]                               ; Stuck at GND due to stuck port data_in                     ;
+; ball_controller:ball_ctrl|ball_px[14,15]                         ; Stuck at GND due to stuck port data_in                     ;
+; adxl345_interface:accel_inst|spi_controller:spic|sdio_buffer[14] ; Stuck at GND due to stuck port data_in                     ;
+; ball_controller:ball_ctrl|ball_vx[14]                            ; Merged with ball_controller:ball_ctrl|ball_vx[15]          ;
+; Total Number of Removed Registers = 60                           ;                                                            ;
++------------------------------------------------------------------+------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -413,12 +383,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 201   ;
-; Number of registers using Synchronous Clear  ; 33    ;
-; Number of registers using Synchronous Load   ; 17    ;
-; Number of registers using Asynchronous Clear ; 146   ;
+; Total registers                              ; 194   ;
+; Number of registers using Synchronous Clear  ; 38    ;
+; Number of registers using Synchronous Load   ; 19    ;
+; Number of registers using Asynchronous Clear ; 73    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 139   ;
+; Number of registers using Clock Enable       ; 116   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -428,32 +398,39 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; accelerometer_spi:accel_inst|cs_reg    ; 2       ;
 ; ball_controller:ball_ctrl|ball_px[12]  ; 4       ;
 ; ball_controller:ball_ctrl|ball_px[10]  ; 4       ;
-; Total number of inverted registers = 3 ;         ;
+; Total number of inverted registers = 2 ;         ;
 +----------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |top_module|vga_renderer:renderer|vga_r[3]             ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top_module|vga_controller:vga_ctrl|column[0]          ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |top_module|vga_controller:vga_ctrl|row[7]             ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top_module|vga_controller:vga_ctrl|h_count[0]         ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; Yes        ; |top_module|ball_controller:ball_ctrl|ball_px[1]       ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top_module|vga_controller:vga_ctrl|v_count[4]         ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top_module|vga_renderer:renderer|vga_g[1]             ;
-; 6:1                ; 23 bits   ; 92 LEs        ; 46 LEs               ; 46 LEs                 ; Yes        ; |top_module|accelerometer_spi:accel_inst|shift_out[23] ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |top_module|accelerometer_spi:accel_inst|bit_cnt[0]    ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |top_module|vga_controller:vga_ctrl|row[2]             ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |top_module|ball_controller:ball_ctrl|ball_px[10]      ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top_module|vga_renderer:renderer|vga_r                ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |top_module|ball_controller:ball_ctrl|vx_clamped[3]    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------+
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |top_module|adxl345_interface:accel_inst|spi_controller:spic|sdio_buffer[13]                       ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |top_module|vga_renderer:renderer|vga_b[3]                                                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top_module|adxl345_interface:accel_inst|spi_controller:spic|spi_clock_generator:spicg|o_fall_edge ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top_module|adxl345_interface:accel_inst|spi_controller:spic|spi_clock_generator:spicg|count[4]    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top_module|adxl345_interface:accel_inst|spi_input_data[7]                                         ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |top_module|adxl345_interface:accel_inst|spi_input_data[13]                                        ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top_module|adxl345_interface:accel_inst|spi_controller:spic|sclk_count[0]                         ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |top_module|adxl345_interface:accel_inst|data_buffer[4][5]                                         ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |top_module|adxl345_interface:accel_inst|config_count[1]                                           ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top_module|vga_controller:vga_ctrl|column[8]                                                      ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |top_module|vga_controller:vga_ctrl|row[4]                                                         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top_module|vga_controller:vga_ctrl|h_count[3]                                                     ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; Yes        ; |top_module|ball_controller:ball_ctrl|ball_px[5]                                                   ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top_module|vga_controller:vga_ctrl|v_count[1]                                                     ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |top_module|adxl345_interface:accel_inst|read_count[0]                                             ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top_module|vga_renderer:renderer|vga_g[3]                                                         ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |top_module|adxl345_interface:accel_inst|spi_input_data[3]                                         ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |top_module|vga_controller:vga_ctrl|row[2]                                                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |top_module|ball_controller:ball_ctrl|ball_px[12]                                                  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top_module|vga_renderer:renderer|vga_r                                                            ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |top_module|ball_controller:ball_ctrl|vx_clamped[12]                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------+
@@ -1128,39 +1105,58 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+--------------------------------------+
 
 
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "adxl345_interface:accel_inst|spi_controller:spic" ;
++------------+-------+----------+----------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                      ;
++------------+-------+----------+----------------------------------------------+
+; i_data[14] ; Input ; Info     ; Stuck at GND                                 ;
++------------+-------+----------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "adxl345_interface:accel_inst"                                                           ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; o_data_y ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o_data_z ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 63                          ;
-; cycloneiii_ff         ; 201                         ;
-;     CLR               ; 37                          ;
-;     ENA               ; 20                          ;
-;     ENA CLR           ; 82                          ;
-;     ENA CLR SCLR      ; 12                          ;
+; cycloneiii_ff         ; 194                         ;
+;     CLR               ; 21                          ;
+;     ENA               ; 48                          ;
+;     ENA CLR           ; 37                          ;
 ;     ENA CLR SLD       ; 15                          ;
-;     ENA SCLR          ; 10                          ;
-;     SCLR              ; 11                          ;
-;     SLD               ; 2                           ;
-;     plain             ; 12                          ;
-; cycloneiii_lcell_comb ; 2415                        ;
-;     arith             ; 751                         ;
+;     ENA SCLR          ; 16                          ;
+;     SCLR              ; 22                          ;
+;     SLD               ; 4                           ;
+;     plain             ; 31                          ;
+; cycloneiii_io_obuf    ; 1                           ;
+; cycloneiii_lcell_comb ; 2434                        ;
+;     arith             ; 732                         ;
 ;         1 data inputs ; 10                          ;
-;         2 data inputs ; 130                         ;
+;         2 data inputs ; 111                         ;
 ;         3 data inputs ; 611                         ;
-;     normal            ; 1664                        ;
+;     normal            ; 1702                        ;
 ;         0 data inputs ; 124                         ;
-;         1 data inputs ; 56                          ;
-;         2 data inputs ; 926                         ;
-;         3 data inputs ; 45                          ;
-;         4 data inputs ; 513                         ;
+;         1 data inputs ; 53                          ;
+;         2 data inputs ; 918                         ;
+;         3 data inputs ; 60                          ;
+;         4 data inputs ; 547                         ;
 ; cycloneiii_mac_mult   ; 2                           ;
 ; cycloneiii_mac_out    ; 2                           ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 53.30                       ;
-; Average LUT depth     ; 37.83                       ;
+; Average LUT depth     ; 37.89                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1179,7 +1175,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Apr 01 15:03:18 2026
+    Info: Processing started: Wed Apr 01 11:37:26 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off EECS3216FinalProject -c EECS3216FinalProject
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -1193,8 +1189,12 @@ Info (12021): Found 1 design units, including 1 entities, in source file seg7_di
     Info (12023): Found entity 1: seg7_display File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file ball_controller.v
     Info (12023): Found entity 1: ball_controller File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/ball_controller.v Line: 6
-Info (12021): Found 1 design units, including 1 entities, in source file accelerometer_spi.v
-    Info (12023): Found entity 1: accelerometer_spi File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/accelerometer_spi.v Line: 5
+Info (12021): Found 5 design units, including 5 entities, in source file adxl345_interface.sv
+    Info (12023): Found entity 1: adxl345_interface File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/adxl345_interface.sv Line: 48
+    Info (12023): Found entity 2: config_rom File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/adxl345_interface.sv Line: 153
+    Info (12023): Found entity 3: read_rom File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/adxl345_interface.sv Line: 182
+    Info (12023): Found entity 4: spi_controller File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/adxl345_interface.sv Line: 198
+    Info (12023): Found entity 5: spi_clock_generator File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/adxl345_interface.sv Line: 298
 Info (12021): Found 1 design units, including 1 entities, in source file ip/pll.v
     Info (12023): Found entity 1: pll File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/ip/pll.v Line: 40
 Info (12127): Elaborating entity "top_module" for the top level hierarchy
@@ -1262,15 +1262,16 @@ Info (12128): Elaborating entity "pll_altpll" for hierarchy "pll:pll_inst|altpll
 Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_controller:vga_ctrl" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 71
 Warning (10230): Verilog HDL assignment warning at vga_controller.v(46): truncated value with size 32 to match size of target (10) File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/vga_controller.v Line: 46
 Warning (10230): Verilog HDL assignment warning at vga_controller.v(50): truncated value with size 32 to match size of target (10) File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/vga_controller.v Line: 50
-Info (12128): Elaborating entity "accelerometer_spi" for hierarchy "accelerometer_spi:accel_inst" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 86
-Warning (10230): Verilog HDL assignment warning at accelerometer_spi.v(31): truncated value with size 32 to match size of target (5) File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/accelerometer_spi.v Line: 31
-Warning (10230): Verilog HDL assignment warning at accelerometer_spi.v(114): truncated value with size 32 to match size of target (5) File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/accelerometer_spi.v Line: 114
-Warning (10230): Verilog HDL assignment warning at accelerometer_spi.v(134): truncated value with size 32 to match size of target (16) File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/accelerometer_spi.v Line: 134
-Info (12128): Elaborating entity "ball_controller" for hierarchy "ball_controller:ball_ctrl" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 107
+Info (12128): Elaborating entity "adxl345_interface" for hierarchy "adxl345_interface:accel_inst" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 91
+Info (12128): Elaborating entity "config_rom" for hierarchy "adxl345_interface:accel_inst|config_rom:cr" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/adxl345_interface.sv Line: 92
+Info (12128): Elaborating entity "read_rom" for hierarchy "adxl345_interface:accel_inst|read_rom:rr" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/adxl345_interface.sv Line: 93
+Info (12128): Elaborating entity "spi_controller" for hierarchy "adxl345_interface:accel_inst|spi_controller:spic" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/adxl345_interface.sv Line: 95
+Info (12128): Elaborating entity "spi_clock_generator" for hierarchy "adxl345_interface:accel_inst|spi_controller:spic|spi_clock_generator:spicg" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/adxl345_interface.sv Line: 231
+Info (12128): Elaborating entity "ball_controller" for hierarchy "ball_controller:ball_ctrl" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 112
 Warning (10230): Verilog HDL assignment warning at ball_controller.v(82): truncated value with size 32 to match size of target (16) File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/ball_controller.v Line: 82
 Warning (10230): Verilog HDL assignment warning at ball_controller.v(102): truncated value with size 32 to match size of target (16) File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/ball_controller.v Line: 102
-Info (12128): Elaborating entity "vga_renderer" for hierarchy "vga_renderer:renderer" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 125
-Info (12128): Elaborating entity "seg7_display" for hierarchy "seg7_display:score_disp" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 137
+Info (12128): Elaborating entity "vga_renderer" for hierarchy "vga_renderer:renderer" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 130
+Info (12128): Elaborating entity "seg7_display" for hierarchy "seg7_display:score_disp" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 142
 Warning (10230): Verilog HDL assignment warning at seg7_display.v(19): truncated value with size 32 to match size of target (4) File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 19
 Warning (10230): Verilog HDL assignment warning at seg7_display.v(20): truncated value with size 32 to match size of target (4) File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 20
 Warning (10230): Verilog HDL assignment warning at seg7_display.v(21): truncated value with size 32 to match size of target (4) File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 21
@@ -1359,7 +1360,7 @@ Info (12133): Instantiated megafunction "vga_renderer:renderer|lpm_mult:Mult1" w
     Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_bgs.tdf
     Info (12023): Found entity 1: mult_bgs File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/mult_bgs.tdf Line: 29
-Info (13000): Registers with preset signals will power-up high File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/accelerometer_spi.v Line: 85
+Info (13000): Registers with preset signals will power-up high File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/ball_controller.v Line: 111
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX4[0]" is stuck at VCC File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 45
@@ -1367,7 +1368,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX4[5]" is stuck at VCC File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 45
     Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 47
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_23_result_int[0]~0" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 107
     Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_6_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 127
@@ -1414,20 +1414,28 @@ Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_20_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 92
     Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_21_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 97
     Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_22_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 102
+Info (144001): Generated suppressed messages file C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/output_files/EECS3216FinalProject.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 25
-Info (21057): Implemented 2514 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2518 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 59 output pins
-    Info (21061): Implemented 2446 logic cells
+    Info (21059): Implemented 58 output pins
+    Info (21060): Implemented 1 bidirectional pins
+    Info (21061): Implemented 2450 logic cells
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 4 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
-    Info: Peak virtual memory: 4880 megabytes
-    Info: Processing ended: Wed Apr 01 15:03:33 2026
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:29
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 4868 megabytes
+    Info: Processing ended: Wed Apr 01 11:37:40 2026
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:27
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/output_files/EECS3216FinalProject.map.smsg.
 
 
