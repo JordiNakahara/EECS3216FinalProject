@@ -109,6 +109,7 @@ module top_module (
     wire [8:0]  ball_y, plat_y;
     wire [23:0] score;
     wire        game_over;
+    wire        game_win;
 
     ball_controller ball_ctrl (
         .clk        (pixel_clk),
@@ -122,7 +123,8 @@ module top_module (
         .safe_x     (safe_x),
         .safe_w     (safe_w_out),
         .score      (score),
-        .game_over  (game_over)
+        .game_over  (game_over),
+        .game_win   (game_win)
     );
 
     // ---- VGA Renderer ----
@@ -138,6 +140,7 @@ module top_module (
         .safe_x    (safe_x),
         .safe_w    (safe_w_out),
         .game_over (game_over),
+        .game_win  (game_win),
         .splash_active(!game_started),
         .vga_r     (VGA_R),
         .vga_g     (VGA_G),
@@ -148,6 +151,7 @@ module top_module (
     seg7_display score_disp (
         .score     (score),
         .game_over (game_over),
+        .game_win  (game_win),
         .hex0      (HEX0),
         .hex1      (HEX1),
         .hex2      (HEX2),

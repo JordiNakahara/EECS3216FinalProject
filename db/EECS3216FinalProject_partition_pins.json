@@ -180,6 +180,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "HEX4[1]",
+					"strict" : false
+				},
+				{
 					"name" : "HEX4[2]",
 					"strict" : false
 				},
@@ -197,6 +201,10 @@
 				},
 				{
 					"name" : "HEX5[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[1]",
 					"strict" : false
 				},
 				{
