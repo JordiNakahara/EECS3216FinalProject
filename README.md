@@ -9,7 +9,7 @@
 |---|---|
 | `top_module.v` | Top-level: wires everything together |
 | `vga_controller.v` | Provided VGA sync controller (do not modify) |
-| `accelerometer_spi.v` | SPI driver for ADXL345 on DE10-Lite |
+| `adxl345_interface.sv` | Working ADXL345 3-wire SPI + INT1 interface |
 | `ball_controller.v` | Ball physics, safe-zone logic, scoring |
 | `vga_renderer.v` | Pixel colour generator (what gets drawn) |
 | `seg7_display.v` | 7-segment score & "Go" game-over display |
@@ -50,11 +50,9 @@
 - Ball is drawn as a filled circle using squared-distance comparison (no sqrt needed).
 
 ### Accelerometer
-- ADXL345 communicates via SPI at ~1 MHz.
-- `accelerometer_spi.v` performs:
-  1. **Init write**: sets POWER_CTL register to Measure mode.
-  2. **Continuous reads**: multibyte read of DATAX0 + DATAX1 (10-bit signed X value).
-- New readings arrive approximately every 1 ms.
+- ADXL345 communicates via 3-wire SPI (`SDIO`) plus `INT1` data-ready interrupt.
+- `adxl345_interface.sv` performs ADXL345 configuration then continuously reads X/Y/Z data.
+- `top_module.v` uses the X-axis output for ball movement.
 
 ### Ball Physics (Fixed-Point)
 - Position and velocity stored in Q10.4 fixed-point (lower 4 bits = fraction).

@@ -15,9 +15,9 @@
 //   VGA_R/G/B      -> vga_r/g/b
 //   VGA_HS/VS      -> hsync/vsync
 //   GSENSOR_SCLK   -> accel_sclk
-//   GSENSOR_SDI    -> accel_mosi
-//   GSENSOR_SDO    -> accel_miso
+//   GSENSOR_SDIO   -> accel_data (3-wire bidirectional)
 //   GSENSOR_CS_N   -> accel_cs_n
+//   GSENSOR_INT    -> accel_data_ready interrupt
 //   HEX0..HEX5     -> hex0..hex5
 
 module top_module (
@@ -31,11 +31,11 @@ module top_module (
     output       VGA_HS,
     output       VGA_VS,
 
-    // ADXL345 Accelerometer SPI
+    // ADXL345 Accelerometer (3-wire SPI + interrupt)
     output       GSENSOR_SCLK,
-    output       GSENSOR_SDI,    // MOSI
-    input        GSENSOR_SDO,    // MISO
+    inout        GSENSOR_SDIO,
     output       GSENSOR_CS_N,
+    input        GSENSOR_INT,
 
     // 7-segment displays
     output [6:0] HEX0,
@@ -70,19 +70,24 @@ module top_module (
         .row       (vga_row)
     );
 
-    // ---- Accelerometer SPI ----
-    wire signed [9:0] x_accel;
-    wire              accel_valid;
+    // ---- Accelerometer Interface (working module from DE10-Lite_Accelerometer) ----
+    wire [9:0] x_accel_u;
+    wire [9:0] y_accel_u;
+    wire [9:0] z_accel_u;
+    wire       accel_valid;
+    wire signed [9:0] x_accel = x_accel_u;
 
-    accelerometer_spi accel_inst (
-        .clk        (MAX10_CLK1_50),
-        .reset_n    (reset_n),
-        .sclk       (GSENSOR_SCLK),
-        .cs_n       (GSENSOR_CS_N),
-        .mosi       (GSENSOR_SDI),
-        .miso       (GSENSOR_SDO),
-        .x_accel    (x_accel),
-        .data_valid (accel_valid)
+    adxl345_interface accel_inst (
+        .i_clk       (MAX10_CLK1_50),
+        .i_rst_n     (reset_n),
+        .o_data_x    (x_accel_u),
+        .o_data_y    (y_accel_u),
+        .o_data_z    (z_accel_u),
+        .o_data_valid(accel_valid),
+        .o_sclk      (GSENSOR_SCLK),
+        .io_sdio     (GSENSOR_SDIO),
+        .o_cs_n      (GSENSOR_CS_N),
+        .i_int1      (GSENSOR_INT)
     );
 
     // ---- Ball / Game Logic ----

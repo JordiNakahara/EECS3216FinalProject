@@ -1,5 +1,5 @@
 Analysis & Synthesis report for EECS3216FinalProject
-Tue Mar 31 14:16:05 2026
+Wed Apr 01 15:03:33 2026
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar 31 14:16:05 2026       ;
+; Analysis & Synthesis Status        ; Successful - Wed Apr 01 15:03:33 2026       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; EECS3216FinalProject                        ;
 ; Top-level Entity Name              ; top_module                                  ;
@@ -1169,7 +1169,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -1179,7 +1179,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Mar 31 14:15:50 2026
+    Info: Processing started: Wed Apr 01 15:03:18 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off EECS3216FinalProject -c EECS3216FinalProject
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -1425,9 +1425,9 @@ Info (21057): Implemented 2514 device resources after synthesis - the final reso
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 4 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
-    Info: Peak virtual memory: 4878 megabytes
-    Info: Processing ended: Tue Mar 31 14:16:05 2026
+    Info: Peak virtual memory: 4880 megabytes
+    Info: Processing ended: Wed Apr 01 15:03:33 2026
     Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Total CPU time (on all processors): 00:00:29
 
 
