@@ -1,6 +1,6 @@
 Analysis & Synthesis report for EECS3216FinalProject
-Tue Mar 31 14:16:05 2026
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Tue Mar 31 21:17:39 2026
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
 ---------------------
@@ -43,7 +43,7 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2024  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -60,26 +60,26 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
-+------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar 31 14:16:05 2026       ;
-; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name                      ; EECS3216FinalProject                        ;
-; Top-level Entity Name              ; top_module                                  ;
-; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 2,442                                       ;
-;     Total combinational functions  ; 2,412                                       ;
-;     Dedicated logic registers      ; 201                                         ;
-; Total registers                    ; 201                                         ;
-; Total pins                         ; 63                                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 4                                           ;
-; Total PLLs                         ; 1                                           ;
-; UFM blocks                         ; 0                                           ;
-; ADC blocks                         ; 0                                           ;
-+------------------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Mar 31 21:17:39 2026          ;
+; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                      ; EECS3216FinalProject                           ;
+; Top-level Entity Name              ; top_module                                     ;
+; Family                             ; MAX 10                                         ;
+; Total logic elements               ; 2,442                                          ;
+;     Total combinational functions  ; 2,412                                          ;
+;     Dedicated logic registers      ; 201                                            ;
+; Total registers                    ; 201                                            ;
+; Total pins                         ; 63                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 4                                              ;
+; Total PLLs                         ; 1                                              ;
+; UFM blocks                         ; 0                                              ;
+; ADC blocks                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------+
@@ -173,11 +173,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 16          ;
-; Maximum allowed            ; 16          ;
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 16          ;
+; Maximum used               ; 14          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
@@ -186,53 +186,51 @@ https://fpgasoftware.intel.com/eula.
 ;     Processor 4            ;   0.0%      ;
 ;     Processor 5            ;   0.0%      ;
 ;     Processor 6            ;   0.0%      ;
-;     Processor 7            ;   0.0%      ;
-;     Processor 8            ;   0.0%      ;
-;     Processors 9-16        ;   0.0%      ;
+;     Processors 7-14        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                           ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                       ; Library ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
-; vga_renderer.v                   ; yes             ; User Verilog HDL File        ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/vga_renderer.v             ;         ;
-; vga_controller.v                 ; yes             ; User Verilog HDL File        ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/vga_controller.v           ;         ;
-; top_module.v                     ; yes             ; User Verilog HDL File        ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v               ;         ;
-; seg7_display.v                   ; yes             ; User Verilog HDL File        ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v             ;         ;
-; ball_controller.v                ; yes             ; User Verilog HDL File        ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/ball_controller.v          ;         ;
-; accelerometer_spi.v              ; yes             ; User Verilog HDL File        ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/accelerometer_spi.v        ;         ;
-; ip/pll.v                         ; yes             ; User Wizard-Generated File   ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/ip/pll.v                   ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf                  ;         ;
-; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc              ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_pll.inc             ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratixii_pll.inc           ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/cycloneii_pll.inc           ;         ;
-; db/pll_altpll.v                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/pll_altpll.v            ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf              ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc             ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc         ;         ;
-; db/lpm_divide_qll.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/lpm_divide_qll.tdf      ;         ;
-; db/sign_div_unsign_plh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/sign_div_unsign_plh.tdf ;         ;
-; db/alt_u_div_she.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf       ;         ;
-; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/add_sub_t3c.tdf         ;         ;
-; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/add_sub_u3c.tdf         ;         ;
-; db/lpm_divide_ntl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/lpm_divide_ntl.tdf      ;         ;
-; db/lpm_divide_qtl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/lpm_divide_qtl.tdf      ;         ;
-; db/sign_div_unsign_slh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/sign_div_unsign_slh.tdf ;         ;
-; db/alt_u_div_2ie.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_2ie.tdf       ;         ;
-; db/lpm_divide_4vl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/lpm_divide_4vl.tdf      ;         ;
-; db/sign_div_unsign_6nh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/sign_div_unsign_6nh.tdf ;         ;
-; db/alt_u_div_mke.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_mke.tdf       ;         ;
-; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf                ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_add_sub.inc             ;         ;
-; multcore.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/multcore.inc                ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/bypassff.inc                ;         ;
-; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altshift.inc                ;         ;
-; db/mult_fgs.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/mult_fgs.tdf            ;         ;
-; db/mult_bgs.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/mult_bgs.tdf            ;         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                        ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
+; vga_renderer.v                   ; yes             ; User Verilog HDL File        ; C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/vga_renderer.v             ;         ;
+; vga_controller.v                 ; yes             ; User Verilog HDL File        ; C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/vga_controller.v           ;         ;
+; top_module.v                     ; yes             ; User Verilog HDL File        ; C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/top_module.v               ;         ;
+; seg7_display.v                   ; yes             ; User Verilog HDL File        ; C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/seg7_display.v             ;         ;
+; ball_controller.v                ; yes             ; User Verilog HDL File        ; C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/ball_controller.v          ;         ;
+; accelerometer_spi.v              ; yes             ; User Verilog HDL File        ; C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/accelerometer_spi.v        ;         ;
+; ip/pll.v                         ; yes             ; User Wizard-Generated File   ; C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/ip/pll.v                   ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altpll.tdf            ;         ;
+; aglobal231.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc        ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratixii_pll.inc     ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/cycloneii_pll.inc     ;         ;
+; db/pll_altpll.v                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/pll_altpll.v            ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_divide.tdf        ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/abs_divider.inc       ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sign_div_unsign.inc   ;         ;
+; db/lpm_divide_qll.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/lpm_divide_qll.tdf      ;         ;
+; db/sign_div_unsign_plh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/sign_div_unsign_plh.tdf ;         ;
+; db/alt_u_div_she.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf       ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/add_sub_t3c.tdf         ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/add_sub_u3c.tdf         ;         ;
+; db/lpm_divide_ntl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/lpm_divide_ntl.tdf      ;         ;
+; db/lpm_divide_qtl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/lpm_divide_qtl.tdf      ;         ;
+; db/sign_div_unsign_slh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/sign_div_unsign_slh.tdf ;         ;
+; db/alt_u_div_2ie.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_2ie.tdf       ;         ;
+; db/lpm_divide_4vl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/lpm_divide_4vl.tdf      ;         ;
+; db/sign_div_unsign_6nh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/sign_div_unsign_6nh.tdf ;         ;
+; db/alt_u_div_mke.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_mke.tdf       ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mult.tdf          ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_add_sub.inc       ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/multcore.inc          ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/bypassff.inc          ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altshift.inc          ;         ;
+; db/mult_fgs.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/mult_fgs.tdf            ;         ;
+; db/mult_bgs.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/mult_bgs.tdf            ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------+
@@ -1178,30 +1176,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Mar 31 14:15:50 2026
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+    Info: Processing started: Tue Mar 31 21:17:28 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off EECS3216FinalProject -c EECS3216FinalProject
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file vga_renderer.v
-    Info (12023): Found entity 1: vga_renderer File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/vga_renderer.v Line: 10
+    Info (12023): Found entity 1: vga_renderer File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/vga_renderer.v Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file vga_controller.v
-    Info (12023): Found entity 1: vga_controller File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/vga_controller.v Line: 4
+    Info (12023): Found entity 1: vga_controller File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/vga_controller.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file top_module.v
-    Info (12023): Found entity 1: top_module File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 23
+    Info (12023): Found entity 1: top_module File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/top_module.v Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file seg7_display.v
-    Info (12023): Found entity 1: seg7_display File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 7
+    Info (12023): Found entity 1: seg7_display File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/seg7_display.v Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file ball_controller.v
-    Info (12023): Found entity 1: ball_controller File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/ball_controller.v Line: 6
+    Info (12023): Found entity 1: ball_controller File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/ball_controller.v Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file accelerometer_spi.v
-    Info (12023): Found entity 1: accelerometer_spi File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/accelerometer_spi.v Line: 5
+    Info (12023): Found entity 1: accelerometer_spi File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/accelerometer_spi.v Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file ip/pll.v
-    Info (12023): Found entity 1: pll File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/ip/pll.v Line: 40
+    Info (12023): Found entity 1: pll File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/ip/pll.v Line: 40
 Info (12127): Elaborating entity "top_module" for the top level hierarchy
-Info (12128): Elaborating entity "pll" for hierarchy "pll:pll_inst" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 57
-Info (12128): Elaborating entity "altpll" for hierarchy "pll:pll_inst|altpll:altpll_component" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/ip/pll.v Line: 91
-Info (12130): Elaborated megafunction instantiation "pll:pll_inst|altpll:altpll_component" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/ip/pll.v Line: 91
-Info (12133): Instantiated megafunction "pll:pll_inst|altpll:altpll_component" with the following parameter: File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/ip/pll.v Line: 91
+Info (12128): Elaborating entity "pll" for hierarchy "pll:pll_inst" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/top_module.v Line: 57
+Info (12128): Elaborating entity "altpll" for hierarchy "pll:pll_inst|altpll:altpll_component" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/ip/pll.v Line: 91
+Info (12130): Elaborated megafunction instantiation "pll:pll_inst|altpll:altpll_component" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/ip/pll.v Line: 91
+Info (12133): Instantiated megafunction "pll:pll_inst|altpll:altpll_component" with the following parameter: File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/ip/pll.v Line: 91
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "2000"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -1257,84 +1255,84 @@ Info (12133): Instantiated megafunction "pll:pll_inst|altpll:altpll_component" w
     Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_altpll.v
-    Info (12023): Found entity 1: pll_altpll File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/pll_altpll.v Line: 30
-Info (12128): Elaborating entity "pll_altpll" for hierarchy "pll:pll_inst|altpll:altpll_component|pll_altpll:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
-Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_controller:vga_ctrl" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 71
-Warning (10230): Verilog HDL assignment warning at vga_controller.v(46): truncated value with size 32 to match size of target (10) File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/vga_controller.v Line: 46
-Warning (10230): Verilog HDL assignment warning at vga_controller.v(50): truncated value with size 32 to match size of target (10) File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/vga_controller.v Line: 50
-Info (12128): Elaborating entity "accelerometer_spi" for hierarchy "accelerometer_spi:accel_inst" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 86
-Warning (10230): Verilog HDL assignment warning at accelerometer_spi.v(31): truncated value with size 32 to match size of target (5) File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/accelerometer_spi.v Line: 31
-Warning (10230): Verilog HDL assignment warning at accelerometer_spi.v(114): truncated value with size 32 to match size of target (5) File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/accelerometer_spi.v Line: 114
-Warning (10230): Verilog HDL assignment warning at accelerometer_spi.v(134): truncated value with size 32 to match size of target (16) File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/accelerometer_spi.v Line: 134
-Info (12128): Elaborating entity "ball_controller" for hierarchy "ball_controller:ball_ctrl" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 107
-Warning (10230): Verilog HDL assignment warning at ball_controller.v(82): truncated value with size 32 to match size of target (16) File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/ball_controller.v Line: 82
-Warning (10230): Verilog HDL assignment warning at ball_controller.v(102): truncated value with size 32 to match size of target (16) File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/ball_controller.v Line: 102
-Info (12128): Elaborating entity "vga_renderer" for hierarchy "vga_renderer:renderer" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 125
-Info (12128): Elaborating entity "seg7_display" for hierarchy "seg7_display:score_disp" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 137
-Warning (10230): Verilog HDL assignment warning at seg7_display.v(19): truncated value with size 32 to match size of target (4) File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 19
-Warning (10230): Verilog HDL assignment warning at seg7_display.v(20): truncated value with size 32 to match size of target (4) File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 20
-Warning (10230): Verilog HDL assignment warning at seg7_display.v(21): truncated value with size 32 to match size of target (4) File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 21
-Warning (10230): Verilog HDL assignment warning at seg7_display.v(22): truncated value with size 32 to match size of target (4) File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 22
+    Info (12023): Found entity 1: pll_altpll File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/pll_altpll.v Line: 30
+Info (12128): Elaborating entity "pll_altpll" for hierarchy "pll:pll_inst|altpll:altpll_component|pll_altpll:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altpll.tdf Line: 898
+Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_controller:vga_ctrl" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/top_module.v Line: 71
+Warning (10230): Verilog HDL assignment warning at vga_controller.v(46): truncated value with size 32 to match size of target (10) File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/vga_controller.v Line: 46
+Warning (10230): Verilog HDL assignment warning at vga_controller.v(50): truncated value with size 32 to match size of target (10) File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/vga_controller.v Line: 50
+Info (12128): Elaborating entity "accelerometer_spi" for hierarchy "accelerometer_spi:accel_inst" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/top_module.v Line: 86
+Warning (10230): Verilog HDL assignment warning at accelerometer_spi.v(31): truncated value with size 32 to match size of target (5) File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/accelerometer_spi.v Line: 31
+Warning (10230): Verilog HDL assignment warning at accelerometer_spi.v(114): truncated value with size 32 to match size of target (5) File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/accelerometer_spi.v Line: 114
+Warning (10230): Verilog HDL assignment warning at accelerometer_spi.v(134): truncated value with size 32 to match size of target (16) File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/accelerometer_spi.v Line: 134
+Info (12128): Elaborating entity "ball_controller" for hierarchy "ball_controller:ball_ctrl" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/top_module.v Line: 107
+Warning (10230): Verilog HDL assignment warning at ball_controller.v(82): truncated value with size 32 to match size of target (16) File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/ball_controller.v Line: 82
+Warning (10230): Verilog HDL assignment warning at ball_controller.v(102): truncated value with size 32 to match size of target (16) File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/ball_controller.v Line: 102
+Info (12128): Elaborating entity "vga_renderer" for hierarchy "vga_renderer:renderer" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/top_module.v Line: 125
+Info (12128): Elaborating entity "seg7_display" for hierarchy "seg7_display:score_disp" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/top_module.v Line: 137
+Warning (10230): Verilog HDL assignment warning at seg7_display.v(19): truncated value with size 32 to match size of target (4) File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/seg7_display.v Line: 19
+Warning (10230): Verilog HDL assignment warning at seg7_display.v(20): truncated value with size 32 to match size of target (4) File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/seg7_display.v Line: 20
+Warning (10230): Verilog HDL assignment warning at seg7_display.v(21): truncated value with size 32 to match size of target (4) File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/seg7_display.v Line: 21
+Warning (10230): Verilog HDL assignment warning at seg7_display.v(22): truncated value with size 32 to match size of target (4) File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/seg7_display.v Line: 22
 Info (278001): Inferred 9 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "seg7_display:score_disp|Mod0" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 19
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "seg7_display:score_disp|Div0" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 20
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "seg7_display:score_disp|Mod1" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 20
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "seg7_display:score_disp|Div1" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 21
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "seg7_display:score_disp|Mod2" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 21
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "seg7_display:score_disp|Div2" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 22
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "seg7_display:score_disp|Mod3" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 22
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "vga_renderer:renderer|Mult0" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/vga_renderer.v Line: 41
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "vga_renderer:renderer|Mult1" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/vga_renderer.v Line: 41
-Info (12130): Elaborated megafunction instantiation "seg7_display:score_disp|lpm_divide:Mod0" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 19
-Info (12133): Instantiated megafunction "seg7_display:score_disp|lpm_divide:Mod0" with the following parameter: File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 19
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "seg7_display:score_disp|Mod0" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/seg7_display.v Line: 19
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "seg7_display:score_disp|Div0" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/seg7_display.v Line: 20
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "seg7_display:score_disp|Mod1" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/seg7_display.v Line: 20
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "seg7_display:score_disp|Div1" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/seg7_display.v Line: 21
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "seg7_display:score_disp|Mod2" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/seg7_display.v Line: 21
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "seg7_display:score_disp|Div2" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/seg7_display.v Line: 22
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "seg7_display:score_disp|Mod3" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/seg7_display.v Line: 22
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "vga_renderer:renderer|Mult0" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/vga_renderer.v Line: 41
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "vga_renderer:renderer|Mult1" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/vga_renderer.v Line: 41
+Info (12130): Elaborated megafunction instantiation "seg7_display:score_disp|lpm_divide:Mod0" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/seg7_display.v Line: 19
+Info (12133): Instantiated megafunction "seg7_display:score_disp|lpm_divide:Mod0" with the following parameter: File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/seg7_display.v Line: 19
     Info (12134): Parameter "LPM_WIDTHN" = "24"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_qll.tdf
-    Info (12023): Found entity 1: lpm_divide_qll File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/lpm_divide_qll.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_qll File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/lpm_divide_qll.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_plh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_plh File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/sign_div_unsign_plh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_plh File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/sign_div_unsign_plh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_she.tdf
-    Info (12023): Found entity 1: alt_u_div_she File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 27
+    Info (12023): Found entity 1: alt_u_div_she File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
-    Info (12023): Found entity 1: add_sub_t3c File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/add_sub_t3c.tdf Line: 23
+    Info (12023): Found entity 1: add_sub_t3c File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/add_sub_t3c.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
-    Info (12023): Found entity 1: add_sub_u3c File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/add_sub_u3c.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "seg7_display:score_disp|lpm_divide:Div0" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 20
-Info (12133): Instantiated megafunction "seg7_display:score_disp|lpm_divide:Div0" with the following parameter: File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 20
+    Info (12023): Found entity 1: add_sub_u3c File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/add_sub_u3c.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "seg7_display:score_disp|lpm_divide:Div0" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/seg7_display.v Line: 20
+Info (12133): Instantiated megafunction "seg7_display:score_disp|lpm_divide:Div0" with the following parameter: File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/seg7_display.v Line: 20
     Info (12134): Parameter "LPM_WIDTHN" = "24"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ntl.tdf
-    Info (12023): Found entity 1: lpm_divide_ntl File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/lpm_divide_ntl.tdf Line: 25
-Info (12130): Elaborated megafunction instantiation "seg7_display:score_disp|lpm_divide:Div1" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 21
-Info (12133): Instantiated megafunction "seg7_display:score_disp|lpm_divide:Div1" with the following parameter: File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 21
+    Info (12023): Found entity 1: lpm_divide_ntl File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/lpm_divide_ntl.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "seg7_display:score_disp|lpm_divide:Div1" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/seg7_display.v Line: 21
+Info (12133): Instantiated megafunction "seg7_display:score_disp|lpm_divide:Div1" with the following parameter: File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/seg7_display.v Line: 21
     Info (12134): Parameter "LPM_WIDTHN" = "24"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_qtl.tdf
-    Info (12023): Found entity 1: lpm_divide_qtl File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/lpm_divide_qtl.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_qtl File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/lpm_divide_qtl.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_slh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_slh File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/sign_div_unsign_slh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_slh File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/sign_div_unsign_slh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_2ie.tdf
-    Info (12023): Found entity 1: alt_u_div_2ie File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_2ie.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "seg7_display:score_disp|lpm_divide:Div2" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 22
-Info (12133): Instantiated megafunction "seg7_display:score_disp|lpm_divide:Div2" with the following parameter: File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/seg7_display.v Line: 22
+    Info (12023): Found entity 1: alt_u_div_2ie File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_2ie.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "seg7_display:score_disp|lpm_divide:Div2" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/seg7_display.v Line: 22
+Info (12133): Instantiated megafunction "seg7_display:score_disp|lpm_divide:Div2" with the following parameter: File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/seg7_display.v Line: 22
     Info (12134): Parameter "LPM_WIDTHN" = "24"
     Info (12134): Parameter "LPM_WIDTHD" = "10"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_4vl.tdf
-    Info (12023): Found entity 1: lpm_divide_4vl File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/lpm_divide_4vl.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_4vl File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/lpm_divide_4vl.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_6nh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_6nh File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/sign_div_unsign_6nh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_6nh File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/sign_div_unsign_6nh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_mke.tdf
-    Info (12023): Found entity 1: alt_u_div_mke File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_mke.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "vga_renderer:renderer|lpm_mult:Mult0" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/vga_renderer.v Line: 41
-Info (12133): Instantiated megafunction "vga_renderer:renderer|lpm_mult:Mult0" with the following parameter: File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/vga_renderer.v Line: 41
+    Info (12023): Found entity 1: alt_u_div_mke File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_mke.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "vga_renderer:renderer|lpm_mult:Mult0" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/vga_renderer.v Line: 41
+Info (12133): Instantiated megafunction "vga_renderer:renderer|lpm_mult:Mult0" with the following parameter: File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/vga_renderer.v Line: 41
     Info (12134): Parameter "LPM_WIDTHA" = "11"
     Info (12134): Parameter "LPM_WIDTHB" = "11"
     Info (12134): Parameter "LPM_WIDTHP" = "22"
@@ -1345,9 +1343,9 @@ Info (12133): Instantiated megafunction "vga_renderer:renderer|lpm_mult:Mult0" w
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_fgs.tdf
-    Info (12023): Found entity 1: mult_fgs File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/mult_fgs.tdf Line: 29
-Info (12130): Elaborated megafunction instantiation "vga_renderer:renderer|lpm_mult:Mult1" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/vga_renderer.v Line: 41
-Info (12133): Instantiated megafunction "vga_renderer:renderer|lpm_mult:Mult1" with the following parameter: File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/vga_renderer.v Line: 41
+    Info (12023): Found entity 1: mult_fgs File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/mult_fgs.tdf Line: 29
+Info (12130): Elaborated megafunction instantiation "vga_renderer:renderer|lpm_mult:Mult1" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/vga_renderer.v Line: 41
+Info (12133): Instantiated megafunction "vga_renderer:renderer|lpm_mult:Mult1" with the following parameter: File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/vga_renderer.v Line: 41
     Info (12134): Parameter "LPM_WIDTHA" = "10"
     Info (12134): Parameter "LPM_WIDTHB" = "10"
     Info (12134): Parameter "LPM_WIDTHP" = "20"
@@ -1358,66 +1356,66 @@ Info (12133): Instantiated megafunction "vga_renderer:renderer|lpm_mult:Mult1" w
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_bgs.tdf
-    Info (12023): Found entity 1: mult_bgs File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/mult_bgs.tdf Line: 29
-Info (13000): Registers with preset signals will power-up high File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/accelerometer_spi.v Line: 85
+    Info (12023): Found entity 1: mult_bgs File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/mult_bgs.tdf Line: 29
+Info (13000): Registers with preset signals will power-up high File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/accelerometer_spi.v Line: 85
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 45
-    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 45
-    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 45
-    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 47
+    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/top_module.v Line: 45
+    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/top_module.v Line: 45
+    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/top_module.v Line: 45
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/top_module.v Line: 47
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (17016): Found the following redundant logic cells in design
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_23_result_int[0]~0" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 107
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_6_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 127
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_7_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 132
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_8_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 137
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_9_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 142
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_10_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 37
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_11_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 42
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_12_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 47
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_13_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 52
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_14_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 57
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_15_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 62
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_16_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 67
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_17_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 72
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_18_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 77
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_19_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 82
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_20_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 92
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_21_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 97
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_22_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 102
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_23_result_int[0]~0" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 107
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_9_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 142
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_10_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 37
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_11_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 42
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_12_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 47
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_13_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 52
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_14_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 57
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_15_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 62
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_16_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 67
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_17_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 72
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_18_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 77
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_19_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 82
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_20_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 92
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_21_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 97
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_22_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 102
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_23_result_int[0]~0" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 107
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_12_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 47
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_13_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 52
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_14_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 57
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_15_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 62
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_16_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 67
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_17_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 72
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_18_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 77
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_19_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 82
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_20_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 92
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_21_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 97
-    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_22_result_int[0]~10" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 102
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_23_result_int[0]~0" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 107
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_6_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 127
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_7_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 132
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_8_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 137
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_9_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 142
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_10_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 37
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_11_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 42
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_12_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 47
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_13_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 52
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_14_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 57
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_15_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 62
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_16_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 67
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_17_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 72
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_18_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 77
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_19_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 82
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_20_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 92
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_21_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 97
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod1|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_22_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 102
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_23_result_int[0]~0" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 107
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_9_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 142
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_10_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 37
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_11_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 42
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_12_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 47
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_13_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 52
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_14_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 57
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_15_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 62
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_16_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 67
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_17_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 72
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_18_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 77
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_19_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 82
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_20_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 92
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_21_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 97
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod2|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_22_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 102
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_23_result_int[0]~0" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 107
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_12_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 47
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_13_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 52
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_14_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 57
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_15_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 62
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_16_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 67
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_17_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 72
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_18_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 77
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_19_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 82
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_20_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 92
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_21_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 97
+    Info (17048): Logic cell "seg7_display:score_disp|lpm_divide:Mod3|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider|add_sub_22_result_int[0]~10" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/db/alt_u_div_she.tdf Line: 102
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/jordi/Documents/EECS 3216/EECS3216FinalProject/top_module.v Line: 25
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/jordi/Documents/GitHub/EECS3216FinalProject/top_module.v Line: 25
 Info (21057): Implemented 2514 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 59 output pins
@@ -1425,9 +1423,9 @@ Info (21057): Implemented 2514 device resources after synthesis - the final reso
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 4 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
-    Info: Peak virtual memory: 4878 megabytes
-    Info: Processing ended: Tue Mar 31 14:16:05 2026
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Peak virtual memory: 4889 megabytes
+    Info: Processing ended: Tue Mar 31 21:17:39 2026
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:18
 
 

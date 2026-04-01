@@ -1,0 +1,164 @@
+// top_led_test.v
+// Ball Balancing Game - LED Debug Version
+// Group: Jordi Nakahara, Ryan Kwan
+//
+// Tests the accelerometer + ball physics without any VGA display.
+// The 10 LEDs (LEDR[9:0]) visualise the ball position on the platform.
+// LEDR[4] and LEDR[5] = centre = safe zone.
+//
+// LED mapping (platform = 10 zones):
+//   LEDR[0]  = far left
+//   LEDR[9]  = far right
+//   LEDR[4..5] lit GREEN (but LEDR are red, so just track which ones are on)
+//
+// HEX displays:
+//   HEX1-HEX0 = score (0-99)
+//   HEX3-HEX2 = "bL" when ball is in safe zone, "  " otherwise
+//   HEX5-HEX4 = "Go" on game over
+//
+// KEY[0] = reset
+
+module top_led_test (
+    input        MAX10_CLK1_50,
+    input  [1:0] KEY,
+
+    // LEDs
+    output [9:0] LEDR,
+
+    // 7-segment
+    output [6:0] HEX0,
+    output [6:0] HEX1,
+    output [6:0] HEX2,
+    output [6:0] HEX3,
+    output [6:0] HEX4,
+    output [6:0] HEX5,
+
+    // Accelerometer SPI
+    output       GSENSOR_SCLK,
+    output       GSENSOR_SDI,
+    input        GSENSOR_SDO,
+    output       GSENSOR_CS_N
+);
+
+    wire reset_n = KEY[0];
+
+    // ---- Accelerometer ----
+    wire signed [9:0] x_accel;
+    wire              accel_valid;
+
+    accelerometer_spi accel_inst (
+        .clk        (MAX10_CLK1_50),
+        .reset_n    (reset_n),
+        .sclk       (GSENSOR_SCLK),
+        .cs_n       (GSENSOR_CS_N),
+        .mosi       (GSENSOR_SDI),
+        .miso       (GSENSOR_SDO),
+        .x_accel    (x_accel),
+        .data_valid (accel_valid)
+    );
+
+    // ---- Ball physics (reused from main project, no VGA needed) ----
+    // We only need ball_x, score, game_over from ball_controller.
+    // The static outputs (ball_y, plat_x etc.) are simply unused here.
+    wire [9:0]  ball_x;
+    wire [8:0]  ball_y_nc;
+    wire [9:0]  plat_x_nc, safe_x_nc, safe_w_nc;
+    wire [8:0]  plat_y_nc;
+    wire [23:0] score;
+    wire        game_over;
+
+    ball_controller ball_ctrl (
+        .clk        (MAX10_CLK1_50),   // run at 50 MHz - fine for physics only
+        .reset_n    (reset_n),
+        .x_accel    (x_accel),
+        .accel_valid(accel_valid),
+        .ball_x     (ball_x),
+        .ball_y     (ball_y_nc),
+        .plat_x     (plat_x_nc),
+        .plat_y     (plat_y_nc),
+        .safe_x     (safe_x_nc),
+        .safe_w     (safe_w_nc),
+        .score      (score),
+        .game_over  (game_over)
+    );
+
+    // ----------------------------------------------------------------
+    // Map ball_x (range 78..562) onto 10 LEDs
+    // Platform: BALL_XMIN=78, BALL_XMAX=562, range=484 pixels
+    // Each LED covers 484/10 = ~48 pixels
+    // ----------------------------------------------------------------
+    localparam integer BALL_XMIN = 78;
+    localparam integer BALL_XMAX = 562;
+    localparam integer RANGE     = BALL_XMAX - BALL_XMIN; // 484
+
+    // Which of 10 buckets does ball_x fall in?
+    wire [9:0] offset = (ball_x >= BALL_XMIN) ? (ball_x - BALL_XMIN) : 10'd0;
+
+    // bucket = offset * 10 / RANGE   -- avoid division: use comparators
+    wire [2:0] bucket =
+        (offset < 10'd49)  ? 3'd0 :
+        (offset < 10'd97)  ? 3'd1 :
+        (offset < 10'd145) ? 3'd2 :
+        (offset < 10'd194) ? 3'd3 :
+        (offset < 10'd242) ? 3'd4 :
+        (offset < 10'd290) ? 3'd5 :
+        (offset < 10'd339) ? 3'd6 :
+        (offset < 10'd387) ? 3'd7 :
+        (offset < 10'd435) ? 3'd8 :
+                             3'd9;
+
+    // One-hot LED from bucket (safe zone = buckets 4 and 5)
+    reg [9:0] led_reg;
+    always @(*) begin
+        led_reg = 10'b0;
+        if (!game_over)
+            led_reg[bucket] = 1'b1;
+        else
+            led_reg = 10'b1111111111; // all LEDs on when game over
+    end
+
+    assign LEDR = led_reg;
+
+    // ----------------------------------------------------------------
+    // 7-segment displays
+    // ----------------------------------------------------------------
+    // Active-low segment encoding
+    localparam SEG_BLANK = 7'b1111111;
+    localparam SEG_G     = 7'b0000010;  // G
+    localparam SEG_O     = 7'b0100011;  // o
+    localparam SEG_b     = 7'b0000011;  // b (lowercase)
+    localparam SEG_L     = 7'b1000111;  // L
+    localparam SEG_DASH  = 7'b0111111;  // -
+
+    // Decimal digit decoder
+    function [6:0] seg7;
+        input [3:0] d;
+        case (d)
+            4'd0: seg7 = 7'b1000000;
+            4'd1: seg7 = 7'b1111001;
+            4'd2: seg7 = 7'b0100100;
+            4'd3: seg7 = 7'b0110000;
+            4'd4: seg7 = 7'b0011001;
+            4'd5: seg7 = 7'b0010010;
+            4'd6: seg7 = 7'b0000010;
+            4'd7: seg7 = 7'b1111000;
+            4'd8: seg7 = 7'b0000000;
+            4'd9: seg7 = 7'b0010000;
+            default: seg7 = 7'b1111111;
+        endcase
+    endfunction
+
+    wire [3:0] score_ones = score[3:0] % 10;
+    wire [3:0] score_tens = (score % 100) / 10;
+
+    // Is ball currently in safe zone? (buckets 4 or 5)
+    wire in_safe = (bucket == 3'd4 || bucket == 3'd5) && !game_over;
+
+    assign HEX0 = game_over ? SEG_BLANK : seg7(score_ones);
+    assign HEX1 = game_over ? SEG_BLANK : seg7(score_tens);
+    assign HEX2 = game_over ? SEG_BLANK : (in_safe ? SEG_L : SEG_BLANK);
+    assign HEX3 = game_over ? SEG_BLANK : (in_safe ? SEG_b : SEG_BLANK);
+    assign HEX4 = game_over ? SEG_O     : SEG_BLANK;
+    assign HEX5 = game_over ? SEG_G     : SEG_BLANK;
+
+endmodule

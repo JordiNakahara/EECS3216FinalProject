@@ -1,6 +1,6 @@
 Flow report for EECS3216FinalProject
-Tue Mar 31 14:16:56 2026
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Tue Mar 31 21:18:18 2026
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
 ---------------------
@@ -21,7 +21,7 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2024  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -38,28 +38,28 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+----------------------------------------------------------------------------------+
-; Flow Summary                                                                     ;
-+------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Mar 31 14:16:50 2026       ;
-; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name                      ; EECS3216FinalProject                        ;
-; Top-level Entity Name              ; top_module                                  ;
-; Family                             ; MAX 10                                      ;
-; Device                             ; 10M50DCF484C7G                              ;
-; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 2,439 / 49,760 ( 5 % )                      ;
-;     Total combinational functions  ; 2,414 / 49,760 ( 5 % )                      ;
-;     Dedicated logic registers      ; 201 / 49,760 ( < 1 % )                      ;
-; Total registers                    ; 201                                         ;
-; Total pins                         ; 63 / 360 ( 18 % )                           ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                       ;
-; Embedded Multiplier 9-bit elements ; 4 / 288 ( 1 % )                             ;
-; Total PLLs                         ; 1 / 4 ( 25 % )                              ;
-; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
-; ADC blocks                         ; 0                                           ;
-+------------------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Flow Summary                                                                        ;
++------------------------------------+------------------------------------------------+
+; Flow Status                        ; Successful - Tue Mar 31 21:18:13 2026          ;
+; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                      ; EECS3216FinalProject                           ;
+; Top-level Entity Name              ; top_module                                     ;
+; Family                             ; MAX 10                                         ;
+; Device                             ; 10M50DCF484C7G                                 ;
+; Timing Models                      ; Final                                          ;
+; Total logic elements               ; 2,438 / 49,760 ( 5 % )                         ;
+;     Total combinational functions  ; 2,414 / 49,760 ( 5 % )                         ;
+;     Dedicated logic registers      ; 201 / 49,760 ( < 1 % )                         ;
+; Total registers                    ; 201                                            ;
+; Total pins                         ; 63 / 360 ( 18 % )                              ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                          ;
+; Embedded Multiplier 9-bit elements ; 4 / 288 ( 1 % )                                ;
+; Total PLLs                         ; 1 / 4 ( 25 % )                                 ;
+; UFM blocks                         ; 0 / 1 ( 0 % )                                  ;
+; ADC blocks                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
 
 
 +------------------------------------------+
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+----------------------+
 ; Option            ; Setting              ;
 +-------------------+----------------------+
-; Start date & time ; 03/31/2026 14:15:51  ;
+; Start date & time ; 03/31/2026 21:17:28  ;
 ; Main task         ; Compilation          ;
 ; Revision Name     ; EECS3216FinalProject ;
 +-------------------+----------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+----------------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value        ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+----------------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 143612517427308.177498095106264        ; --                   ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 10995770589193.177500624832896         ; --                   ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --                   ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --                   ; --          ; eda_timing_analysis               ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --                   ; --          ; eda_board_design_boundary_scan    ;
@@ -105,11 +105,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 4878 MB             ; 00:00:27                           ;
-; Fitter               ; 00:00:39     ; 1.2                     ; 6640 MB             ; 00:01:14                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 4699 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:05     ; 1.7                     ; 4982 MB             ; 00:00:08                           ;
-; Total                ; 00:01:01     ; --                      ; --                  ; 00:01:52                           ;
+; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4889 MB             ; 00:00:18                           ;
+; Fitter               ; 00:00:29     ; 1.2                     ; 6517 MB             ; 00:00:50                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4831 MB             ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:04     ; 1.4                     ; 4994 MB             ; 00:00:05                           ;
+; Total                ; 00:00:45     ; --                      ; --                  ; 00:01:15                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -118,10 +118,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; LAPTOP-4OM2KG8K  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; LAPTOP-4OM2KG8K  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; LAPTOP-4OM2KG8K  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; LAPTOP-4OM2KG8K  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; Jordi            ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; Jordi            ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; Jordi            ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; Jordi            ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

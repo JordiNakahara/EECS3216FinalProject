@@ -1,0 +1,11 @@
+
+State Machine - |top_led_test|accelerometer_spi:accel_inst|state
+Name state.S_READ_PARSE state.S_READ_SHIFT state.S_READ_LOAD state.S_FMT_SHIFT state.S_FMT_LOAD state.S_PWR_SHIFT state.S_PWR_LOAD state.S_STARTUP 
+state.S_STARTUP 0 0 0 0 0 0 0 0 
+state.S_PWR_LOAD 0 0 0 0 0 0 1 1 
+state.S_PWR_SHIFT 0 0 0 0 0 1 0 1 
+state.S_FMT_LOAD 0 0 0 0 1 0 0 1 
+state.S_FMT_SHIFT 0 0 0 1 0 0 0 1 
+state.S_READ_LOAD 0 0 1 0 0 0 0 1 
+state.S_READ_SHIFT 0 1 0 0 0 0 0 1 
+state.S_READ_PARSE 1 0 0 0 0 0 0 1 

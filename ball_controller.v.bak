@@ -1,140 +1,134 @@
 // ball_controller.v
 // Handles ball physics driven by accelerometer X-axis data.
-// Ball rolls on a platform rectangle. Scoring counts frames ball stays in safe zone.
-// Outputs ball position, platform position, safe zone, score, and game-over flag.
+// Ball rolls on a platform. Scoring counts VGA frames ball stays in safe zone.
+// Game ends when the ball leaves the safe zone.
 
 module ball_controller (
-    input             clk,          // pixel clock (25 MHz)
-    input             reset_n,      // active-low reset
+    input              clk,         // pixel clock (25 MHz)
+    input              reset_n,     // active-low async reset
 
     // Accelerometer
-    input signed [9:0] x_accel,     // signed X acceleration
-    input              accel_valid,  // pulse when new accel data available
+    input  signed [9:0] x_accel,    // signed 10-bit X acceleration
+    input               accel_valid, // pulses high for 1 clk when new data ready
 
     // Outputs for renderer
-    output reg [9:0]  ball_x,       // ball centre X
-    output reg [8:0]  ball_y,       // ball centre Y
-    output reg [9:0]  plat_x,       // platform left edge X
-    output reg [8:0]  plat_y,       // platform top edge Y
-    output reg [9:0]  safe_x,       // safe zone left X
-    output reg [9:0]  safe_w,       // safe zone width
-    output reg [23:0] score,        // BCD-like frame counter (simple binary here)
-    output reg        game_over     // asserted when ball leaves safe zone
+    output reg  [9:0]  ball_x,      // ball centre X (integer pixels)
+    output      [8:0]  ball_y,      // ball centre Y - static constant
+    output      [9:0]  plat_x,      // platform left X - static constant
+    output      [8:0]  plat_y,      // platform top  Y - static constant
+    output      [9:0]  safe_x,      // safe zone left X - static constant
+    output      [9:0]  safe_w,      // safe zone width  - static constant
+    output reg  [23:0] score,       // binary score (increments each frame in safe zone)
+    output reg         game_over    // held high once ball leaves safe zone
 );
 
-    // ---- Layout constants (640x480 display) ----
-    localparam PLAT_W   = 500;   // platform width  (pixels)
-    localparam PLAT_H   = 10;    // platform height (pixels)
-    localparam PLAT_X0  = 70;    // platform left X (centred)
-    localparam PLAT_Y0  = 380;   // platform top  Y
+    // -----------------------------------------------------------------------
+    // Layout constants  (640x480 display)
+    // -----------------------------------------------------------------------
+    localparam integer PLAT_W    = 500;
+    localparam integer PLAT_X0   = 70;
+    localparam integer PLAT_Y0   = 380;
+    localparam integer SAFE_W_C  = 100;
+    localparam integer SAFE_X0   = PLAT_X0 + (PLAT_W - SAFE_W_C) / 2;
+    localparam integer BALL_R    = 8;
+    localparam integer BALL_Y0   = PLAT_Y0 - BALL_R;
+    localparam integer BALL_XMIN = PLAT_X0 + BALL_R;
+    localparam integer BALL_XMAX = PLAT_X0 + PLAT_W - BALL_R;
+    localparam integer BALL_X0   = (BALL_XMIN + BALL_XMAX) / 2;
+    localparam integer SAFE_XMIN = SAFE_X0;
+    localparam integer SAFE_XMAX = SAFE_X0 + SAFE_W_C;
 
-    localparam SAFE_W   = 100;   // safe zone width
-    localparam SAFE_X0  = PLAT_X0 + (PLAT_W - SAFE_W) / 2; // centred on platform
+    // -----------------------------------------------------------------------
+    // Static outputs driven only by assign (never touched by always block)
+    // -----------------------------------------------------------------------
+    assign ball_y = BALL_Y0[8:0];
+    assign plat_x = PLAT_X0[9:0];
+    assign plat_y = PLAT_Y0[8:0];
+    assign safe_x = SAFE_X0[9:0];
+    assign safe_w = SAFE_W_C[9:0];
 
-    localparam BALL_R   = 8;     // ball radius (pixels)
-    localparam BALL_Y0  = PLAT_Y0 - BALL_R; // ball rests on platform top
+    // -----------------------------------------------------------------------
+    // Ball physics: Q10.4 signed fixed-point (lower 4 bits = fraction)
+    // -----------------------------------------------------------------------
+    reg signed [15:0] ball_px;  // fixed-point position
+    reg signed [15:0] ball_vx;  // fixed-point velocity
 
-    // Ball X range: left wall = PLAT_X0+BALL_R, right wall = PLAT_X0+PLAT_W-BALL_R
-    localparam BALL_XMIN = PLAT_X0 + BALL_R;
-    localparam BALL_XMAX = PLAT_X0 + PLAT_W - BALL_R;
+    // Scaled acceleration: divide raw accel by 8 for gentle tilting response
+    wire signed [9:0] accel_s = x_accel >>> 3;
 
-    // Safe zone x range for ball centre
-    localparam SAFE_XMIN = SAFE_X0;
-    localparam SAFE_XMAX = SAFE_X0 + SAFE_W;
+    // --- Combinational next-state wires (one assignment each) ---
 
-    // ---- Ball velocity (fixed-point: lower 4 bits = fraction) ----
-    reg signed [13:0] ball_vx;   // Q10.4 fixed-point velocity
-    reg signed [13:0] ball_px;   // Q10.4 fixed-point position
+    // 1. Add acceleration to velocity (sign-extend accel_s to 16 bits)
+    wire signed [15:0] vx_after_accel = ball_vx + {{6{accel_s[9]}}, accel_s};
 
-    // ---- Score frame divider (count every ~60 pixel-clock frames) ----
-    // VGA frame = 800*525 = 420000 pixel clocks ~ 420k cycles at 25MHz
-    localparam FRAME_PERIOD = 420000;
-    reg [18:0] frame_cnt;
+    // 2. Clamp velocity to +/-240 (Q10.4: ~15 px/sample max speed)
+    wire signed [15:0] vx_clamped =
+        (vx_after_accel >  16'sd240) ?  16'sd240 :
+        (vx_after_accel < -16'sd240) ? -16'sd240 :
+         vx_after_accel;
 
-    // ---- Acceleration scale: shift accel right by 3 (divide by 8) ----
-    // This gives gentle rolling feel
-    wire signed [9:0] accel_scaled = x_accel >>> 3;
+    // 3. Apply friction: vx * 7/8  (vx - vx>>3), fully synthesisable
+    wire signed [15:0] vx_friction = vx_clamped - (vx_clamped >>> 3);
 
-    // ---- Initialise constants ----
-    initial begin
-        ball_x   = (BALL_XMIN + BALL_XMAX) / 2;
-        ball_y   = BALL_Y0;
-        ball_px  = ball_x << 4;
-        ball_vx  = 0;
-        plat_x   = PLAT_X0;
-        plat_y   = PLAT_Y0;
-        safe_x   = SAFE_X0;
-        safe_w   = SAFE_W;
-        score    = 0;
-        game_over = 0;
-        frame_cnt = 0;
-    end
+    // 4. Advance position
+    wire signed [15:0] px_next = ball_px + vx_friction;
 
+    // 5. Wall detection
+    wire wall_left  = (px_next >>> 4) <= $signed(16'd0 + BALL_XMIN);
+    wire wall_right = (px_next >>> 4) >= $signed(16'd0 + BALL_XMAX);
+
+    // 6. Clamp position to walls
+    wire signed [15:0] px_final =
+        wall_left  ? $signed(BALL_XMIN << 4) :
+        wall_right ? $signed(BALL_XMAX << 4) :
+        px_next;
+
+    // 7. Reverse+halve velocity on bounce
+    wire signed [15:0] vx_final =
+        (wall_left || wall_right) ? -(vx_friction >>> 1) :
+        vx_friction;
+
+    // -----------------------------------------------------------------------
+    // Frame counter for scoring  (800*525 = 420,000 pixel clocks per frame)
+    // -----------------------------------------------------------------------
+    localparam integer FRAME_PERIOD = 420000;
+    reg [18:0] frame_cnt;  // 2^19 = 524288 > 420000
+
+    // -----------------------------------------------------------------------
+    // Sequential logic: single always block, each reg assigned exactly once
+    // -----------------------------------------------------------------------
     always @(posedge clk or negedge reset_n) begin
         if (!reset_n) begin
-            ball_x    <= (BALL_XMIN + BALL_XMAX) / 2;
-            ball_y    <= BALL_Y0;
-            ball_px   <= ((BALL_XMIN + BALL_XMAX) / 2) << 4;
-            ball_vx   <= 0;
-            score     <= 0;
-            game_over <= 0;
-            frame_cnt <= 0;
+            ball_px   <= $signed(BALL_X0 << 4);
+            ball_vx   <= 16'sd0;
+            ball_x    <= BALL_X0[9:0];
+            score     <= 24'd0;
+            game_over <= 1'b0;
+            frame_cnt <= 19'd0;
         end else begin
 
-            // ------ Update ball physics on new accelerometer reading ------
+            // ---- Physics update (once per accel sample) ----
             if (accel_valid && !game_over) begin
-                // Apply acceleration (add scaled accel to velocity)
-                ball_vx <= ball_vx + {{4{accel_scaled[9]}}, accel_scaled};
-
-                // Clamp velocity to +-15 (Q10.4 = +-240 raw)
-                if (ball_vx > 14'd240)  ball_vx <= 14'd240;
-                if (ball_vx < -14'd240) ball_vx <= -14'd240;
-
-                // Apply friction (multiply by ~0.9 each tick)
-                ball_vx <= (ball_vx * 14'd14) >>> 4; // * 14/16 ≈ 0.875
-
-                // Update position
-                ball_px <= ball_px + ball_vx;
-
-                // Wall collision (bounce with damping)
-                if ((ball_px >>> 4) <= BALL_XMIN) begin
-                    ball_px <= BALL_XMIN << 4;
-                    ball_vx <= -(ball_vx >>> 1); // reverse, halve speed
-                end
-                if ((ball_px >>> 4) >= BALL_XMAX) begin
-                    ball_px <= BALL_XMAX << 4;
-                    ball_vx <= -(ball_vx >>> 1);
-                end
-
-                // Update integer position output
-                ball_x <= ball_px[13:4];
+                ball_vx <= vx_final;
+                ball_px <= px_final;
+                ball_x  <= px_final[13:4];  // integer part of the Q10.4 value
             end
 
-            // ------ Score counter (increment each frame ball is in safe zone) ------
-            frame_cnt <= frame_cnt + 1;
-            if (frame_cnt == FRAME_PERIOD) begin
-                frame_cnt <= 0;
+            // ---- Per-frame scoring ----
+            if (frame_cnt == FRAME_PERIOD - 1) begin
+                frame_cnt <= 19'd0;
                 if (!game_over) begin
-                    // Check if ball centre is within safe zone
-                    if ((ball_x >= SAFE_XMIN) && (ball_x <= SAFE_XMAX)) begin
-                        score <= score + 1;
+                    if ((ball_x >= SAFE_XMIN[9:0]) && (ball_x <= SAFE_XMAX[9:0])) begin
+                        score <= score + 24'd1;
                     end else begin
-                        // Ball left safe zone – game over
-                        game_over <= 1;
+                        game_over <= 1'b1;
                     end
                 end
+            end else begin
+                frame_cnt <= frame_cnt + 19'd1;
             end
 
         end
-    end
-
-    // Static assignments
-    always @(*) begin
-        ball_y = BALL_Y0;
-        plat_x = PLAT_X0;
-        plat_y = PLAT_Y0;
-        safe_x = SAFE_X0;
-        safe_w = SAFE_W;
     end
 
 endmodule
