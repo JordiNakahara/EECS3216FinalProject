@@ -90,15 +90,30 @@ module top_module (
         .i_int1      (GSENSOR_INT)
     );
 
+    // ---- Startup splash gate ----
+    // KEY[1] is active-low: game starts after first press.
+    wire start_btn_n = KEY[1];
+    reg  game_started;
+    wire game_reset_n = reset_n && game_started;
+
+    always @(posedge pixel_clk or negedge reset_n) begin
+        if (!reset_n) begin
+            game_started <= 1'b0;
+        end else if (!start_btn_n) begin
+            game_started <= 1'b1;
+        end
+    end
+
     // ---- Ball / Game Logic ----
     wire [9:0]  ball_x, plat_x, safe_x, safe_w_out;
     wire [8:0]  ball_y, plat_y;
     wire [23:0] score;
     wire        game_over;
+    wire        game_win;
 
     ball_controller ball_ctrl (
         .clk        (pixel_clk),
-        .reset_n    (reset_n),
+        .reset_n    (game_reset_n),
         .x_accel    (x_accel),
         .accel_valid(accel_valid),
         .ball_x     (ball_x),
@@ -108,7 +123,8 @@ module top_module (
         .safe_x     (safe_x),
         .safe_w     (safe_w_out),
         .score      (score),
-        .game_over  (game_over)
+        .game_over  (game_over),
+        .game_win   (game_win)
     );
 
     // ---- VGA Renderer ----
@@ -124,6 +140,8 @@ module top_module (
         .safe_x    (safe_x),
         .safe_w    (safe_w_out),
         .game_over (game_over),
+        .game_win  (game_win),
+        .splash_active(!game_started),
         .vga_r     (VGA_R),
         .vga_g     (VGA_G),
         .vga_b     (VGA_B)
@@ -133,6 +151,7 @@ module top_module (
     seg7_display score_disp (
         .score     (score),
         .game_over (game_over),
+        .game_win  (game_win),
         .hex0      (HEX0),
         .hex1      (HEX1),
         .hex2      (HEX2),

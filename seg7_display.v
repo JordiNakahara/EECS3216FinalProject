@@ -2,11 +2,13 @@
 // Drives the 6 x 7-segment displays on the DE10-Lite.
 // Displays the score as decimal digits on HEX3-HEX0.
 // Displays "Go" on HEX5-HEX4 when game_over is high.
+// Displays "Hi" on HEX5-HEX4 when game_win is high (9999 victory).
 // Active-low segments.
 
 module seg7_display (
     input      [23:0] score,      // binary score value (displayed in decimal)
     input             game_over,
+    input             game_win,
     output reg [6:0]  hex0,       // rightmost digit (ones)
     output reg [6:0]  hex1,
     output reg [6:0]  hex2,
@@ -47,9 +49,19 @@ module seg7_display (
     localparam SEG_G     = 7'b0000010; // G
     localparam SEG_O     = 7'b0100011; // o
     localparam SEG_BLANK = 7'b1111111;
+    // "H" and "i" — [6:0] = gfedcba, active low (matches digit decoder)
+    localparam SEG_H     = 7'b0001001; // H: b,c,e,f,g on
+    localparam SEG_i     = 7'b1111101; // minimal i: b on only
 
     always @(*) begin
-        if (game_over) begin
+        if (game_win) begin
+            hex5 = SEG_H;
+            hex4 = SEG_i;
+            hex3 = seg7(d3);
+            hex2 = seg7(d2);
+            hex1 = seg7(d1);
+            hex0 = seg7(d0);
+        end else if (game_over) begin
             hex5 = SEG_G;
             hex4 = SEG_O;
             hex3 = SEG_BLANK;
