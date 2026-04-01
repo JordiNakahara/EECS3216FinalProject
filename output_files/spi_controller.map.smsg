@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at adxl345_interface.sv(87): object "CONFIG_COUNT" differs only in case from object "config_count" in the same scope File: C:/Users/jordi/Documents/GitHub/DE10-Lite_Accelerometer/adxl345_interface.sv Line: 87
+Info (10281): Verilog HDL Declaration information at adxl345_interface.sv(88): object "READ_COUNT" differs only in case from object "read_count" in the same scope File: C:/Users/jordi/Documents/GitHub/DE10-Lite_Accelerometer/adxl345_interface.sv Line: 88
